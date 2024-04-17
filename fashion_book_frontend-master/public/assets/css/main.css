@@ -1426,8 +1426,9 @@ h2.title {
 .product-information h2 {
   color: #363432;
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 30px;
   margin-top: 0;
+  text-transform: uppercase;
 }
 
 .product-information p {
@@ -2150,7 +2151,7 @@ hr {
   color: #696763;
   font-weight: normal;
   margin-right: 50px;
-  width: 20px;
+  width: 90px;
 }
 
 .user_option input {

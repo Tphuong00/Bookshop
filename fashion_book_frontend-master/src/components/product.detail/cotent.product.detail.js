@@ -185,9 +185,10 @@ class ContentProductDetail extends Component {
                     <span>
                       <div>
                         <span>Giá:</span>
-                        <span>{this.props.mproductDetail.price}</span>
-                        <span>đ</span>
-                        
+                        <span>
+                            {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(this.props.mproductDetail.price)}
+                        </span>
+                                                  
                       </div>
                       <div className='count-product'>
                         <p className='count'>Số Lượng:</p>
