@@ -11,14 +11,14 @@ class EnterNewPassword extends Component {
   }
   handleSubmit() {
     if(this.state.newpassword.length < 6) {
-        this.setState({noti:'Password must contain at least 6 characters'})
+        this.setState({noti:'Mật khẩu phải chứa ít nhất 6 kí tự'})
         return
     } else {
         this.setState({noti: ''})
     }
     if(this.state.confirm !== this.state.newpassword) {
         this.setState({
-            noti: 'Confirm invalid'
+            noti: 'Xác nhận không hợp lệ'
         })
         return
     } else {
@@ -37,21 +37,21 @@ class EnterNewPassword extends Component {
         </div>
         <div className="content-404 forgotpass">
           <h1>
-            <b>ENTER NEW PASSWORD</b>
+            <b>NHẬP MẬT KHẨU MỚI</b>
           </h1>
           <p style={{ color: "tomato" }}>
             {this.state.noti}
           </p>
           <input
             type="password"
-            placeholder="New Password"
+            placeholder="Mật khẩu mới"
             onChange={e => {this.props.setNewPassword(e.target.value) 
                 this.setState({newpassword: e.target.value})}}
           />
           <br />
           <input
             type="password"
-            placeholder="Confirm"
+            placeholder="Nhập lại mật khẩu mới"
             onChange={e => {this.props.setConfirm(e.target.value)
             this.setState({confirm: e.target.value})}}
           />
@@ -61,10 +61,10 @@ class EnterNewPassword extends Component {
             onClick={() => 
                 this.handleSubmit()}
           >
-            submit
+            Gửi
           </button>
           <h2>
-            <Link to="/">Bring me back Home</Link>
+            <Link to="/">Trở về trang chủ</Link>
           </h2>
         </div>
       </div>

@@ -20,17 +20,17 @@ function ContentLoginRegister({ setEmailogin, setPasswordlogin, setEmail,
         if(Login){
             xhtmlLogin = <div className="login-form">
             <div className='login-content col-sm-6'>
-            <h2>Login to your account</h2>
+            <h2>Đăng nhập vào tài khoản của bạn</h2>
             <div className="noti">{notificationLogin}</div>
             <input type="email"
-                placeholder="Email address"
+                placeholder="Địa chỉ Email"
                 onChange={(e) => { setEmailogin(e.target.value) }}
             />
             <input type="password"
-                placeholder="Password"
+                placeholder="Mật khẩu"
                 onChange={(e) => { setPasswordlogin(e.target.value) }}
             />
-                          
+                        
             <button
                 className="btn btn-default"
                 onClick={() => loginSubmit()}
@@ -53,31 +53,31 @@ function ContentLoginRegister({ setEmailogin, setPasswordlogin, setEmail,
             <div className="noti">{notificationRegister}</div>
 
             <input type="email"
-                placeholder="Email address"
+                placeholder="Địa chỉ Email"
                 onChange={(e) => { setEmail(e.target.value) }}
             />
             <input type="text"
-                placeholder="First name"
+                placeholder="Họ "
                 onChange={(e) => { setFirstname(e.target.value) }}
             />
             <input type="text"
-                placeholder="Last name"
+                placeholder="Tên"
                 onChange={(e) => { setLastname(e.target.value) }}
             />
             <input type="text"
-                placeholder="Address"
+                placeholder="Địa chỉ"
                 onChange={(e) => { setAddress(e.target.value) }}
             />
             <input type="number"
-                placeholder="Phone number"
+                placeholder="Số điện thoại"
                 onChange={(e) => { setPhone(e.target.value) }}
             />
             <input type="password"
-                placeholder="Password"
+                placeholder="Mật khẩu"
                 onChange={(e) => setPassword(e.target.value)}
             />
             <input type="password"
-                placeholder="Confirm password"
+                placeholder="Nhập lại mật khẩu"
                 onChange={(e) => { setConfirm(e.target.value) }}
             />
             <button

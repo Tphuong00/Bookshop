@@ -54,11 +54,11 @@
 						</div>
 						<div className="col-sm-6">
 							<div className="single-widget">
-								<h2>About Shopper</h2>
+								<h2>Khách hàng</h2>
 								<form action="#" className="form-footer container">
 									<div className='row'>
-									<input type="text" placeholder="Your email address" className='col-sm-4' />
-									<button type="submit" className="">Submit</button>
+									<input type="text" placeholder="Email của bạn" className='col-sm-4' />
+									<button type="Submit" className="">Gửi</button>
 									</div>
 								
 									

@@ -38,7 +38,7 @@ class HeaderMiddle extends Component {
           }}
         >
           <a>
-            <i className="fa fa-lock" />Log out
+            <i className="fa fa-lock" />Đăng xuất
           </a>
         </li>
       );
@@ -46,7 +46,7 @@ class HeaderMiddle extends Component {
       return (
         <li>
           <Link to="/login_register">
-            <i className="fa fa-lock" />Log in
+            <i className="fa fa-lock" />Đăng nhập
           </Link>
         </li>
       );

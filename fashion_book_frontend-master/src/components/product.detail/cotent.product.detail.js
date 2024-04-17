@@ -133,10 +133,10 @@ class ContentProductDetail extends Component {
       </div>
       <div className='aler-body'>Đặt Hàng thành công</div>
       <div className='alert-footer'>
-        <button className="roduct-variation" onClick={() => this.setState({ noti: false })}>
-          Cancel
+        {/* <button className="roduct-variation" onClick={() => this.setState({ noti: false })}>
+          Hủy
           
-        </button>
+        </button> */}
       </div>
     </div>
     }
@@ -146,7 +146,7 @@ class ContentProductDetail extends Component {
           <div className="row">
             <div className="col-sm-3">
               <div className="left-sidebar">
-                <h2>Category</h2>
+                <h2>Thể loại</h2>
                 <div className="panel-group category-products" id="accordian">
                   {this.props.category.map((element, index) => {
                     return (
@@ -223,7 +223,7 @@ class ContentProductDetail extends Component {
                       <b>NXB:</b> {this.props.namePublicsher}
                     </p>
                     <p>
-                      <b>ATác giả:</b> {this.props.nameAuthor}
+                      <b>Tác giả:</b> {this.props.nameAuthor}
                     </p>
                    
                   </div>
@@ -318,7 +318,7 @@ class ContentProductDetail extends Component {
                                   <div className="productinfo text-center">
                                     <a href={"/product/" + element._id}>
                                       <img src={element.img} alt="" />
-                                      <h2>  {new Intl.NumberFormat('de-DE', {currency: 'EUR' }).format(element.price)}<sup>đ</sup></h2>
+                                      <h2>  {new Intl.NumberFormat('de-DE', {currency: 'VND' }).format(element.price)}<sup>đ</sup></h2>
                                       <p>{element.describe}</p>{" "}
                                     </a>
                                     <button
@@ -329,8 +329,7 @@ class ContentProductDetail extends Component {
                                       type="button"
                                       className="btn btn-default add-to-cart"
                                     >
-                                      <i className="fa fa-shopping-cart" />Add
-                                      to cart
+                                      <i className="fa fa-shopping-cart" />Thêm vào giỏ hàng
                                     </button>
                                   </div>
                                 </div>

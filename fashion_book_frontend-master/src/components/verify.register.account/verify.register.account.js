@@ -10,7 +10,7 @@ const VerifyRegisterAccount = () => (
 		</div>
 		<div className="content-404">
 			<h1><b>Congratulations!!!
-			</b> You have verified login successfully</h1>
+			</b> Đăng nhập thành công</h1>
 			<h2><Link to="/">Trở Về Trang Chủ</Link></h2>
 		</div>
 	</div>

@@ -119,7 +119,7 @@ class ContentHome extends Component {
                           type="radio"
                           name="optradio"
                           checked={this.state.check_1}
-                        />ALl price
+                        />Tất cả giá tiền
                       </label>
                     </div>
                     <div className="radio">

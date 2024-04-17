@@ -85,7 +85,7 @@ class Profile extends Component {
     let xhtml = <div className='login-form'>
      <div className = 'login-content col-sm-6'>
     <div className="shopper-info">
-      <p>USER INFORMATIONS</p>
+      <p>THÔNG TIN NGƯỜI DÙNG </p>
       <p className="error">{this.state.notiUpdateInfor}</p>
       <input
         type="text"
@@ -95,25 +95,25 @@ class Profile extends Component {
       />
       <input
         type="text"
-        placeholder="First name"
+        placeholder="Họ"
         value={this.props.firstName}
         onChange={e => this.props.setFirstName(e.target.value)}
       />
       <input
         type="text"
-        placeholder="Last name"
+        placeholder="Tên"
         value={this.props.lastName}
         onChange={e => this.props.setLastName(e.target.value)}
       />
       <input
         type="text"
-        placeholder="Address"
+        placeholder="Địa chỉ"
         value={this.props.address}
         onChange={e => this.props.setAddress(e.target.value)}
       />
       <input
         type="tell"
-        placeholder="Phone number"
+        placeholder="Số điện thoại"
         value={this.props.phone_number}
         onChange={e => this.props.setPhoneNumber(e.target.value)}
       />
@@ -121,7 +121,7 @@ class Profile extends Component {
         onClick={() => this.props.updateInfor()}
         className="btn btn-default"
       >
-        update
+        Cập nhật
       </button>
     </div>
   </div>
@@ -131,7 +131,7 @@ if(this.state.profile){
   <div className = 'login-content col-sm-6'>
   <div className="shopper-info">
   
-    <p>UPDATE PASSWORD</p>
+    <p>THAY ĐỔI MẬT KHẨU</p>
     <p className="error">{this.state.notiUpdatePassword}</p>
     <input
     value={this.state.oldPassword}
@@ -139,7 +139,7 @@ if(this.state.profile){
         this.setState({ oldPassword: e.target.value })
       }
       type="password"
-      placeholder="Old password"
+      placeholder="Mật khẩu cũ"
     />
     <input
     value={this.state.newPassword}
@@ -147,17 +147,17 @@ if(this.state.profile){
         this.setState({ newPassword: e.target.value })
       }
       type="password"
-      placeholder="New Password"
+      placeholder="Mật khẩu  mới"
     />
     <input
 
     value={this.state.confirm}
       onChange={e => this.setState({ confirm: e.target.value })}
       type="password"
-      placeholder="Confirm"
+      placeholder="Nhập lại mật khẩu mới"
     />
     <button onClick={() => this.handleUpdatePassword()}
-    className="btn btn-default">update</button>
+    className="btn btn-default">Cập nhật</button>
   </div>
   </div>
 </div>
