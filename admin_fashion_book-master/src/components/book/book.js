@@ -722,7 +722,7 @@ class Book extends Component {
                         >
                           {this.state.author} <span className="caret" />
                         </button>
-                        <ul className="dropdown-menu" role="menu">
+                        <ul className="dropdown-menu" role="menu" style={{ maxHeight: "200px", overflowY: "auto" }}>
                           {this.renderMenuAuthor()}
                         </ul>
                       </div>

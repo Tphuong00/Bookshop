@@ -162,11 +162,11 @@ exports.requestForgotPassword = async (req, res) => {
     return;
   }
   let token = otp.generateOTP();
-    let sendEmail = await nodemailer.sendEmailForgotPassword(email, token);
-    if (!sendEmail) {
-      res.status(500).json({ msg: "Send email fail" });
-      return;
-    }
+    // let sendEmail = await nodemailer.sendEmailForgotPassword(email, token);
+    // if (!sendEmail) {
+    //   res.status(500).json({ msg: "Send email fail" });
+    //   return;
+    // }
   userFind.token = token;
   try {
     await userFind.save();
