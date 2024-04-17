@@ -64,10 +64,10 @@ exports.register = async (req, res) => {
 };
 
 exports.verifyAccount = async (req, res) => {
-  if (typeof req.params.token === "undefined") {
-    res.status(402).json({ msg: "!invalid" });
-    return;
-  }
+//   if (typeof req.params.token === "undefined") {
+//     res.status(402).json({ msg: "!invalid" });
+//     return;
+//   }
   let token = req.params.token;
   let tokenFind = null;
   try {

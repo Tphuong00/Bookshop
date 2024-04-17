@@ -65,7 +65,7 @@ class ContentCart extends Component {
     let check = true;
     if (this.state.name.length < 3) {
       this.setState({
-        notiName: "Name invalid"
+        notiName: "Vui lòng điền tên "
       });
       check = false;
     } else {
@@ -75,7 +75,7 @@ class ContentCart extends Component {
     }
     if (!this.isvaidPhone(this.state.phone)) {
       this.setState({
-        notiPhone: "Phone invalid"
+        notiPhone: "Vui lòng điền số điện thoại"
       });
       check = false;
     } else {
@@ -83,7 +83,7 @@ class ContentCart extends Component {
     }
    
     if (this.state.address === "") {
-      this.setState({ notiDetailAddress: "Address invalid" });
+      this.setState({ notiDetailAddress: "Vui lòng điền địa chỉ" });
       check = false;
     } else {
       this.setState({ notiDetailAddress: "" });
@@ -173,7 +173,6 @@ class ContentCart extends Component {
                               {" "}
                               +{" "}
                             </span>
-                           
                           </div>
                         </td>
                         <td className="cart_total">
@@ -242,7 +241,7 @@ class ContentCart extends Component {
                 <div className="chose_area">
                   <ul class="user_option">
                     <li>
-                      <label>Name</label>
+                      <label>Tên:</label>
                       <input
                         type="text"
                         value={this.state.name}
@@ -251,7 +250,7 @@ class ContentCart extends Component {
                       <span>{this.state.notiName}</span>
                     </li>
                     <li>
-                      <label>Phone</label>
+                      <label>Số điện thoại:</label>
                       <input
                         type="text"
                         value={this.state.phone}
@@ -263,7 +262,7 @@ class ContentCart extends Component {
                  
                   <ul className="user_option">
                     <li>
-                      <label>Address</label>
+                      <label>Địa chỉ:</label>
                       <input
                         type="text"
                         value={this.state.address}

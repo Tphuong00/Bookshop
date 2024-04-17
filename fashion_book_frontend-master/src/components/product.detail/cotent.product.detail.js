@@ -185,9 +185,10 @@ class ContentProductDetail extends Component {
                     <span>
                       <div>
                         <span>Giá:</span>
-                        <span>{this.props.mproductDetail.price}</span>
-                        <span>đ</span>
-                        
+                        <span>
+                            {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(this.props.mproductDetail.price)}
+                        </span>
+                                                  
                       </div>
                       <div className='count-product'>
                         <p className='count'>Số Lượng:</p>
@@ -205,24 +206,24 @@ class ContentProductDetail extends Component {
                         type="button"
                         className="btn btn-default cart">
                         <i className="fa fa-shopping-cart" />
-                        Add to cart
+                        Thêm vào giỏ hàng
                       </button>
                     </span>
                     <p>{this.state.noti}</p>
                     <p>
-                      <b>Category:</b> {this.props.nameCategory}
+                      <b>Thể loại:</b> {this.props.nameCategory}
                     </p>
                     <p>
-                      <b>Release date </b>{" "}
+                      <b>Ngày xuất bản </b>{" "}
                       {new Date(
                         this.props.mproductDetail.release_date
                       ).toDateString("yyyy-MM-dd")}
                     </p>
                     <p>
-                      <b>Publisher:</b> {this.props.namePublicsher}
+                      <b>NXB:</b> {this.props.namePublicsher}
                     </p>
                     <p>
-                      <b>Author:</b> {this.props.nameAuthor}
+                      <b>ATác giả:</b> {this.props.nameAuthor}
                     </p>
                    
                   </div>
@@ -240,7 +241,7 @@ class ContentProductDetail extends Component {
                     <Modal.Body>Đặt Hàng Thành Công</Modal.Body>
                     <Modal.Footer>
                       <Button onClick={() => this.setState({ show: false })}>
-                        <a>Cancel</a>
+                        <a>Hủy</a>
                       </Button>
                       
                     </Modal.Footer>
@@ -250,7 +251,7 @@ class ContentProductDetail extends Component {
                
                   <div className="col-sm-12 review-product">
                     <div>
-                      <h3>Review Sách</h3>
+                      <h3>Giới thiệu sách</h3>
                       <p>{this.props.mproductDetail.describe}</p>
                     </div>
                   </div>
