@@ -38,11 +38,11 @@ exports.register = async (req, res) => {
     return;
   }
   const token = randomstring.generate();
-  let sendEmail = await nodemailer.sendEmail(email, token);
-  if (!sendEmail) {
-      res.status(500).json({ msg: 'Send email fail' });
-      return;
-  }
+  // let sendEmail = await nodemailer.sendEmail(email, token);
+  // if (!sendEmail) {
+  //     res.status(500).json({ msg: 'Send email fail' });
+  //     return;
+  // }
   password = bcrypt.hashSync(password, 10);
   const newUser = new user({
     email: email,
@@ -64,10 +64,10 @@ exports.register = async (req, res) => {
 };
 
 exports.verifyAccount = async (req, res) => {
-  if (typeof req.params.token === "undefined") {
-    res.status(402).json({ msg: "!invalid" });
-    return;
-  }
+//   if (typeof req.params.token === "undefined") {
+//     res.status(402).json({ msg: "!invalid" });
+//     return;
+//   }
   let token = req.params.token;
   let tokenFind = null;
   try {
