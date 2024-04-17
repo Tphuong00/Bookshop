@@ -1,4 +1,4 @@
-Nhóm 7 
+Nhóm 7 -
 Đồ án: bookshop
 
 Thành viên nhóm: 
