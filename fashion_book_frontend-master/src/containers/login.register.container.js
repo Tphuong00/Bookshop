@@ -100,6 +100,7 @@ class LoginRegisterContainer extends Component {
             return
         }
         this.setState({ notificationRegister: 'Đăng Ký Thành Công' })
+        this.props.history.push('/')
     }
 
     loginSubmit = async () => {

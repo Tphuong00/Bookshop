@@ -77,7 +77,7 @@ function ContentLoginRegister({ setEmailogin, setPasswordlogin, setEmail,
                 onChange={(e) => setPassword(e.target.value)}
             />
             <input type="password"
-                placeholder="Confirm"
+                placeholder="Confirm password"
                 onChange={(e) => { setConfirm(e.target.value) }}
             />
             <button

@@ -114,11 +114,11 @@ class ContentCart extends Component {
               <table className="table table-condensed">
                 <thead>
                   <tr className="cart_menu">
-                    <td className="image">Itemm</td>
+                    <td className="image">Mặt hàng</td>
                     <td className="description" />
-                    <td className="price">Price</td>
-                    <td className="quantity">Quantity</td>
-                    <td className="total">Total</td>
+                    <td className="price">Giá</td>
+                    <td className="quantity">Số lượng</td>
+                    <td className="total">Tổng cộng</td>
                     <td />
                   </tr>
                 </thead>
@@ -142,25 +142,7 @@ class ContentCart extends Component {
                         </td>
                         <td className="cart_quantity">
                           <div className="cart_quantity_button">
-                            <span
-                              className="cart_quantity_up"
-                              onClick={() => {
-                                element.count += 1;
-                                this.props.updateProductInCart(element);
-                              }}
-                            >
-                              {" "}
-                              +{" "}
-                            </span>
-                            <input
-                              className="cart_quantity_input"
-                              type="text"
-                              name="quantity"
-                              value={element.count}
-                              autocomplete="off"
-                              size="2"
-                            />
-                            <span
+                          <span
                               className="cart_quantity_down"
                               onClick={() => {
                                 if (element.count === 1) {
@@ -173,11 +155,30 @@ class ContentCart extends Component {
                               {" "}
                               -{" "}
                             </span>
+                            <input
+                              className="cart_quantity_input"
+                              type="text"
+                              name="quantity"
+                              value={element.count}
+                              autocomplete="off"
+                              size="2"
+                            />
+                             <span
+                              className="cart_quantity_up"
+                              onClick={() => {
+                                element.count += 1;
+                                this.props.updateProductInCart(element);
+                              }}
+                            >
+                              {" "}
+                              +{" "}
+                            </span>
+                           
                           </div>
                         </td>
                         <td className="cart_total">
                           <p className="cart_total_price">
-                          {new Intl.NumberFormat('de-DE', {currency: 'EUR' }).format(element.price * element.count)}<sup>đ</sup>
+                          {new Intl.NumberFormat('de-DE', {currency: 'VND' }).format(element.price * element.count)}<sup>đ</sup>
                             
                           </p>
                         </td>
@@ -207,10 +208,10 @@ class ContentCart extends Component {
                   <ul>
                    
                     <li>
-                      Phí Vận Chuyển<span>0<sup>đ</sup> </span>
+                      Phí Vận Chuyển<span>35.000<sup>đ</sup> </span>
                     </li>
                     <li>
-                      Tổng Tiền <span>  {new Intl.NumberFormat('de-DE', {currency: 'EUR' }).format(this.state.total)}<sup>đ</sup></span>
+                      Tổng Tiền <span>  {new Intl.NumberFormat('de-DE', {currency: 'VND' }).format(this.state.total+35000)}<sup>đ</sup></span>
                     </li>
                   </ul>
                   <Modal
@@ -304,7 +305,7 @@ class ContentCart extends Component {
                         Notification
                       </Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>Đặt Hang Thất Bại</Modal.Body>
+                    <Modal.Body>Đặt Hàng Thất Bại</Modal.Body>
                     <Modal.Footer>
                       <Button onClick={() => this.setState({ showpaymentfail: false })}>
                         <a>Cancel</a>
