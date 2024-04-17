@@ -1,4 +1,6 @@
-Nhóm 7 - Đồ án: bookshop
+Nhóm 7 
+Đồ án: bookshop
+
 Thành viên nhóm: 
 1. Đoàn Văn Nhân - 48.01.104.099
 2. Chu Mai Linh - 47.01.104.120
