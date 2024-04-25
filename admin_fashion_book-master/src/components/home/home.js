@@ -81,7 +81,10 @@ class Home extends Component {
                               
                             </td>
                             <td>{element.name}</td>
-                            <td>{element.price}</td>
+                            <td>
+  {element.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
+</td>
+
                             <td>{element.count}</td>
                             <td>
                               <div className="progress thin">

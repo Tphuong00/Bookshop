@@ -138,7 +138,7 @@ class ContentCart extends Component {
                          
                         </td>
                         <td className="cart_price">
-                          <p>{element.price}</p>
+                          <p>{element.price}<sup>đ</sup></p>
                         </td>
                         <td className="cart_quantity">
                           <div className="cart_quantity_button">
@@ -324,7 +324,6 @@ class ContentCart extends Component {
                     Continue shopping
                   </Link>
                   </div>
-                 
                 </div>
               </div>
             </div>

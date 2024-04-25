@@ -506,7 +506,7 @@ class Book extends Component {
                       <i className="icon_calendar" /> Date
                     </th>
                     <th>
-                      <i className="icon_mail_alt" /> Price
+                    <i className="icon_mail_alt" />Price
                     </th>
                     <th>
                       <i className="icon_pin_alt" /> describe

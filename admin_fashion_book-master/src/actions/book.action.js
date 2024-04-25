@@ -470,3 +470,25 @@ export const updateIssend = (name,id) => async (dispatch, getState) => {
     } 
     dispatch(updateIssendSuccess())
 }
+export const placeOrder =(id, quantity) => async (dispatch, getState) => {
+    let res
+    try {
+          // Gửi yêu cầu đặt hàng đến backend
+        res = await axios.post('http://localhost:8080/admin/placeOrder', {id: id, quantity: quantity });
+        console.log(res.data.message); // Hiển thị thông báo thành công
+    } 
+    catch (err) {
+        console.error('Lỗi khi đặt hàng:', err);
+    }
+}
+export const cancelOrder =(id, quantity) => async (dispatch, getState) => {
+    let res
+    try {
+          // Gửi yêu cầu đặt hàng đến backend
+        res = await axios.post('http://localhost:8080/admin/placeOrder', {id: id, quantity: quantity });
+        console.log(res.data.message); // Hiển thị thông báo thành công
+    } 
+    catch (err) {
+        console.error('Lỗi khi huỷ đơn hàng:', err);
+    }
+}

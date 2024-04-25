@@ -90,13 +90,13 @@ class ContentProductDetail extends Component {
   };
   submitComment = () => {
     if (this.state.name === "") {
-      this.setState({ notificationComment: "Name must not be blank " });
+      this.setState({ notificationComment: "Tên không được để trống " });
       return;
     } else {
       this.setState({ notificationComment: "" });
     }
     if (this.state.comment === "") {
-      this.setState({ notificationComment: "Comment must not be blank " });
+      this.setState({ notificationComment: "Bình luận không được để trống " });
       return;
     } else {
       this.setState({ notificationComment: "" });

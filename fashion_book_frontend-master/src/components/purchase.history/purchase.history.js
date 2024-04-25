@@ -3,6 +3,7 @@ import FooterBottom from "../footer/footer.bottom";
 import FooterMiddle from "../footer/footer.middle";
 import FooterTop from "../footer/footer.top";
 import HeaderMiddle from "../header/header.middle";
+
 class HistoryPurchase extends Component {
   constructor(props) {
     super(props);
@@ -13,7 +14,7 @@ class HistoryPurchase extends Component {
   caculatorTotalBill = (products) => {
     let total = 0;
     products.map((element, index) => {
-      total += element.count * element.price
+      total += (element.count * element.price)
     })
     return total
   }
@@ -26,10 +27,12 @@ class HistoryPurchase extends Component {
           return (
             <div className="table-responsive cart_info" style={{marginBottom: "50px"}}>
               
-              <span>Date: {new Date(element.date).toDateString("yyyy-MM-dd")}</span>
-              <p className='cart_total_price'>Total: 
-              {this.caculatorTotalBill(element.products)}<sup>đ</sup></p>
-              
+              <span>Ngày đặt: {new Date(element.date).toDateString("dd-MM-yyyy")}</span>
+              <p className='cart_total_price'>
+  Tổng tiền: 
+  {(this.caculatorTotalBill(element.products) + 35000).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
+</p>
+
               <table className="table table-condensed">
                 <thead>
                   <tr className="cart_menu">
@@ -55,7 +58,7 @@ class HistoryPurchase extends Component {
               
                     </td>
                     <td className="cart_price">
-                      <p>{item.price}</p>
+                      <p>{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(item.price)}</p>
                     </td>
                     <td className="cart_quantity">
                       <div className="cart_quantity_button">
@@ -70,7 +73,8 @@ class HistoryPurchase extends Component {
                       </div>
                     </td>
                     <td className="cart_total">
-                      <p className="cart_total_price">{item.count * item.price}</p>
+                      <p className="cart_total_price">{new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format((item.count * item.price))}</p>
+                      
                     </td>
                   </tr>
                   )
@@ -114,8 +118,12 @@ class HistoryPurchase extends Component {
           return (
             <div className="table-responsive cart_info" style={{marginBottom: "50px"}}>
               
-              <span>Date: {new Date(element.date).toDateString("yyyy-MM-dd")}</span>
-              <p className='cart_total_price'>Total: {this.caculatorTotalBill(element.products)}<sup>đ</sup></p>
+              <span>Ngày đặt: {new Date(element.date).toDateString("dd-MM-yyyy")}</span>
+              <p className='cart_total_price'>
+  Tổng tiền: 
+  {(this.caculatorTotalBill(element.products) + 35000).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
+</p>
+
               
               <table className="table table-condensed">
                 <thead>
@@ -142,7 +150,7 @@ class HistoryPurchase extends Component {
               
                     </td>
                     <td className="cart_price">
-                      <p>{item.price}</p>
+                      <p>{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(item.price)}</p>
                     </td>
                     <td className="cart_quantity">
                       <div className="cart_quantity_button">
@@ -157,7 +165,7 @@ class HistoryPurchase extends Component {
                       </div>
                     </td>
                     <td className="cart_total">
-                      <p className="cart_total_price">{item.count * item.price}</p>
+                    <p className="cart_total_price">{((item.count * item.price)).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</p>
                     </td>
                   </tr>
                   )
@@ -195,9 +203,11 @@ class HistoryPurchase extends Component {
           return (
             <div className="table-responsive cart_info" style={{marginBottom: "50px"}}>
               
-              <span>Date: {new Date(element.date).toDateString("yyyy-MM-dd")}</span>
-              <p className='cart_total_price'>Total: {this.caculatorTotalBill(element.products)}<sup>đ</sup> </p>
-              
+              <span>Ngày đặt: {new Date(element.date).toDateString("dd-MM-yyyy")}</span>
+              <p className='cart_total_price'>
+  Tổng tiền: 
+  {(this.caculatorTotalBill(element.products) + 35000).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
+</p>
               <table className="table table-condensed">
                 <thead>
                   <tr className="cart_menu">
@@ -223,7 +233,7 @@ class HistoryPurchase extends Component {
               
                     </td>
                     <td className="cart_price">
-                      <p>{item.price}</p>
+                      <p>{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(item.price)}</p>
                     </td>
                     <td className="cart_quantity">
                       <div className="cart_quantity_button">
@@ -238,8 +248,12 @@ class HistoryPurchase extends Component {
                       </div>
                     </td>
                     <td className="cart_total">
-                      <p className="cart_total_price">{item.count * item.price}</p>
-                    </td>
+  <p className="cart_total_price">
+    {(item.count * item.price).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
+  </p>
+</td>
+
+                   
                   </tr>
                   )
                 })}

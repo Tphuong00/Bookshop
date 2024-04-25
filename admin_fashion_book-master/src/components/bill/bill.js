@@ -136,7 +136,7 @@ class Bill extends Component {
                                       <div className='product-content'>
                                         <div>{item.name }</div>
                                         <div>{"Số Lượng: " + item.count}</div>
-                                        <div className='product-price'><p>Giá: {new Intl.NumberFormat('de-DE', {currency: 'EUR' }).format(item.price)}<sup>đ</sup> </p> </div>
+                                        <div className='product-price'><p>Giá: {new Intl.NumberFormat('de-DE', {currency: 'VND' }).format(item.price)}<sup>đ</sup> </p> </div>
                                       </div>
                                       
                                     </div>
@@ -146,7 +146,7 @@ class Bill extends Component {
                           
                         </td>
                        
-                        <td className='product-price'><p><span>{new Intl.NumberFormat('de-DE', {currency: 'EUR' }).format(element.total)}<sup>đ</sup></span> </p></td>
+                        <td className='product-price'><p><span>{new Intl.NumberFormat('de-DE', {currency: 'VND' }).format((element.total) + 35000)}<sup>đ</sup></span> </p></td>
                         <td><select onChange={e => this.props.updateIssend(e.target.value,element._id)}>
                                   
                           <option
