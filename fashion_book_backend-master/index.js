@@ -16,7 +16,7 @@ const cartRouter = require('./api/routers/cart.router');
 const adminRouter = require('./api/routers/admin.router');
 const addressVnRouter = require('./api/routers/addres.vn.router');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://tphuong0210:thanhphuong123@cluster0.k4vlf5h.mongodb.net/Bookstrore', {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
+mongoose.connect('mongodb+srv://tphuong0210:thanhphuong123@cluster0.k4vlf5h.mongodb.net/Bookstrore', {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false })
   .then(() => console.log('connection successful'))
   .catch((err) => console.error(err));
 

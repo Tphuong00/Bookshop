@@ -1,6 +1,7 @@
 "use strict";
 const bill = require("../models/bill.model");
 const cart = require("../models/cart.model");
+const book = require("../models/book.model");
 const randomstring = require("randomstring");
 const nodemailer = require("../utils/nodemailer");
 exports.addBill = async (req, res) => {
@@ -34,6 +35,17 @@ exports.addBill = async (req, res) => {
   //   res.status(500).json({ msg: "Send email fail" });
   //   return;
   // }
+  let cartProducts = cartFind.products;
+
+  // Trừ số lượng sản phẩm từ kho sách
+  cartProducts.forEach(async product => {
+    let existingBook = await book.findById(product._id);
+    if (existingBook) {
+      existingBook.quantity -= product.count;
+      await existingBook.save();
+    }
+  });
+
   const new_bill = new bill({
     id_user: id_user,
     products: cartFind.products,
@@ -51,6 +63,7 @@ exports.addBill = async (req, res) => {
     return;
   }
   try {
+
     new_bill.save();
   } catch (err) {
     res.status(500).json({ msg: err });
@@ -126,6 +139,16 @@ exports.deleteBill = async (req, res) => {
     res.status(400).json({ msg: "invalid" });
     return;
   }
+  let cancelledProducts = billFind.products;
+
+  // Cộng số lượng sản phẩm vào kho sách
+  cancelledProducts.forEach(async product => {
+    let existingBook = await book.findById(product._id);
+    if (existingBook) {
+      existingBook.quantity += product.count;
+      await existingBook.save();
+    }
+  });
   try {
     billFind.remove();
   } catch (err) {

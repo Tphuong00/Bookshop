@@ -43,9 +43,4 @@ module.exports = (app) => {
        .get(admin_controller.getAllUser);
     app.route('/admin/login')
        .post(admin_controller.login);
-    
-    app.route('/admin/placeOrder')
-       .post(admin_controller.placeOrder);
-    app.route('/admin/cancelOrder')
-       .post(admin_controller.cancelOrder);
 }
